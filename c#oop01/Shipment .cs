@@ -86,6 +86,21 @@ namespace c_oop01
         {
             get { return DeliveryFee + (Weight * 5); }
         }
-        
+        public void UpdateDeliveryFee(double newFee)
+        {
+            if (newFee > 0)
+            {
+                deliveryFee = newFee;
+            }
+        }
+        public void PrintShipment()
+        {
+            Console.WriteLine($"Tracking Code: {TrackingCode}");
+            Console.WriteLine($"Description: {Description}");
+            Console.WriteLine($"Weight: {Weight}");
+            Console.WriteLine($"Delivery Fee: {DeliveryFee}");
+            Console.WriteLine($"Destination: {Destination}");
+            Console.WriteLine($"Estimated Cost: {EstimatedCost}");
+        }
     }
 }
