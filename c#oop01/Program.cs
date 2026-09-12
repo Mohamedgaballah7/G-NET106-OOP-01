@@ -18,7 +18,23 @@
                 Any changes made to the object through either variable will affect the same instance in memory.
                 */
             #endregion
+            //question 2 a & b
+            #region question two
+            // a
+            /*
+             All fields are public, so any code can access and change them directly.
+             There is no validation, so invalid values can be assigned.
+             The data is not hidden, which breaks encapsulation cuz the internal state of Shipment is exposed directly.
+            */
 
+            // b
+            /*
+             Hiding the internal data from direct access.
+             Controlling access to the fields.
+             Allowing validation before changing values.
+             Improving encapsulation and data safety.
+            */ 
+            #endregion
         }
     }
 }
