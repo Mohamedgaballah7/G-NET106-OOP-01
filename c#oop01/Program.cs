@@ -33,7 +33,16 @@
              Controlling access to the fields.
              Allowing validation before changing values.
              Improving encapsulation and data safety.
-            */ 
+            */
+            #endregion
+            //Part 02 : Practical
+            #region Create a DeliveryAddress struct
+            //DeliveryAddress address1 = new DeliveryAddress("New York", "5th Avenue", 123);
+            //DeliveryAddress address2 = new DeliveryAddress();
+            //address2 = address1;
+            //address2.city = "Los Angeles";
+            //Console.WriteLine(address1.GetFullAddress());
+            //Console.WriteLine(address2.GetFullAddress()); 
             #endregion
         }
     }
