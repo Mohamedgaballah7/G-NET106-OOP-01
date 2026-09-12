@@ -1,0 +1,91 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace c_oop01
+{
+    internal struct Shipment
+    {
+        private string trackingCode;
+        private string description;
+        private double weight;
+        private double deliveryFee;
+        public DeliveryAddress Destination { get; set; }
+
+        public Shipment(string trackingCode)
+        {
+            this.trackingCode = "";
+            description = "Unknown";
+            weight = 1;
+            deliveryFee = 50;
+            Destination = new DeliveryAddress("Unknown", "Unknown", 0);
+
+            TrackingCode = trackingCode;
+        }
+
+        public Shipment(
+            string trackingCode,
+            string description,
+            double weight,
+            double deliveryFee,
+            DeliveryAddress destination)
+        {
+            this.trackingCode = "";
+            this.description = "Unknown";
+            this.weight = 1;
+            this.deliveryFee = 50;
+            Destination = new DeliveryAddress("Unknown", "Unknown", 0);
+
+            TrackingCode = trackingCode;
+            Description = description;
+            Weight = weight;
+            DeliveryFee = deliveryFee;
+            Destination = destination;
+        }
+
+        public string TrackingCode
+        {
+            get { return trackingCode; }
+            private set
+            {
+                if (!string.IsNullOrWhiteSpace(value))
+                    trackingCode = value;
+            }
+        }
+
+        public string Description
+        {
+            get { return description; }
+            set
+            {
+                if (!string.IsNullOrWhiteSpace(value))
+                    description = value;
+            }
+        }
+
+        public double Weight
+        {
+            get { return weight; }
+            set
+            {
+                if (value > 0)
+                    weight = value;
+            }
+        }
+
+        public double DeliveryFee
+        {
+            get { return deliveryFee; }
+            private set
+            {
+                if (value > 0)
+                    deliveryFee = value;
+            }
+        }
+        public double EstimatedCost
+        {
+            get { return DeliveryFee + (Weight * 5); }
+        }
+        
+    }
+}
