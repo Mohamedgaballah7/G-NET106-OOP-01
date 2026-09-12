@@ -95,6 +95,7 @@ namespace c_oop01
         }
         public void PrintShipment()
         {
+            Console.WriteLine("-------all Shipment Details-------");
             Console.WriteLine($"Tracking Code: {TrackingCode}");
             Console.WriteLine($"Description: {Description}");
             Console.WriteLine($"Weight: {Weight}");

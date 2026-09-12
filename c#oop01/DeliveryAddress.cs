@@ -21,5 +21,10 @@ namespace c_oop01
         {
             return $"{buildingNumber} {street},{city}. ";
         }
+
+        public override string ToString()
+        {
+            return GetFullAddress();
+        }
     }
 }

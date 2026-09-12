@@ -45,8 +45,111 @@
             //Console.WriteLine(address2.GetFullAddress()); 
             #endregion
 
-            //point 2 
+            //show data 
+            Console.Write("Tracking Code: ");
+            string trackingCode;
 
+            while (true)
+            {
+                trackingCode = Console.ReadLine();
+
+                if (!string.IsNullOrWhiteSpace(trackingCode))
+                    break;
+
+                Console.Write("Invalid tracking code. Enter again: ");
+            }
+
+
+            Console.Write("Description: ");
+            string description;
+
+            while (true)
+            {
+                description = Console.ReadLine();
+
+                if (!string.IsNullOrWhiteSpace(description))
+                    break;
+
+                Console.Write("Invalid description. Enter again: ");
+            }
+
+
+            Console.Write("Weight: ");
+            double weight;
+
+            while (true)
+            {
+                if (double.TryParse(Console.ReadLine(), out weight) && weight > 0)
+                    break;
+
+                Console.Write("Invalid weight. Enter a value greater than 0: ");
+            }
+
+
+            Console.Write("Delivery Fee: ");
+            double deliveryFee;
+
+            while (true)
+            {
+                if (double.TryParse(Console.ReadLine(), out deliveryFee) && deliveryFee > 0)
+                    break;
+
+                Console.Write("Invalid delivery fee. Enter a value greater than 0: ");
+            }
+
+
+            Console.Write("City: ");
+            string city;
+
+            while (true)
+            {
+                city = Console.ReadLine();
+
+                if (!string.IsNullOrWhiteSpace(city))
+                    break;
+
+                Console.Write("Invalid city. Enter again: ");
+            }
+
+
+            Console.Write("Street: ");
+            string street;
+
+            while (true)
+            {
+                street = Console.ReadLine();
+
+                if (!string.IsNullOrWhiteSpace(street))
+                    break;
+
+                Console.Write("Invalid street. Enter again: ");
+            }
+
+
+            Console.Write("Building Number: ");
+            int buildingNumber;
+
+            while (true)
+            {
+                if (int.TryParse(Console.ReadLine(), out buildingNumber) && buildingNumber > 0)
+                    break;
+
+                Console.Write("Invalid building number. Enter a value greater than 0: ");
+            }
+
+
+            DeliveryAddress address =
+                new DeliveryAddress(city, street, buildingNumber);
+
+            Shipment shipment = new Shipment(
+                trackingCode,
+                description,
+                weight,
+                deliveryFee,
+                address
+            );
+            shipment.UpdateDeliveryFee(50);
+            shipment.PrintShipment();
 
         }
     }
